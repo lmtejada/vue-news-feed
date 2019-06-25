@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-    <h1 class="title">SproutLoud News!</h1>
-    <div class="well">
-      <!-- Add your news feed here -->
+    <div class="container">
+      <h1 class="title">SproutLoud News!</h1>
+      <div class="well">
+        <list-articles></list-articles>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
-</script>
+import ListArticles from "./components/ListArticles.vue";
 
+export default {
+  name: "app",
+  components: {
+    ListArticles
+  }
+};
+</script>
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  background-color: #00955f;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -34,16 +43,23 @@ body {
   color: #2c3e50;
   margin-top: 60px;
   margin-bottom: 60px;
+  font-weight: 200;
+  .container {
+    width: 80%;
+    text-align: left;
+  }
 }
 
 .title {
-  color: #FFF;
+  color: #088145;
+  font-weight: 400;
+  font-size: 60px;
+  margin-top: 0px;
 }
 
 .well {
-  max-width: 800px;
   border-radius: 5px;
-  background-color: #FFF;
+  background-color: #fff;
   padding: 0 20px;
 }
 
@@ -58,11 +74,11 @@ body {
   }
 
   &:hover {
-    background-color: #BBB;
+    background-color: #bbb;
   }
 
   &:active {
-    background-color: #AAA;
+    background-color: #aaa;
   }
 
   &.button-link {
@@ -80,7 +96,7 @@ body {
   width: 100%;
   padding: 6px 8px;
   border-radius: 5px;
-  border: 1px solid #BBB;
+  border: 1px solid #bbb;
 }
 
 .text-muted {
